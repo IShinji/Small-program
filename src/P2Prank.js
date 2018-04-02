@@ -15,7 +15,7 @@ let getRank = function (totalMoney, ticket = 0, rank, days, back = 0.1) {
 	// 实际投资用的钱
     let newPayMoney = totalMoney - ticket;
     // 如果有额外的返利
-	newPayMoney += (back / 100) * newPayMoney;
+	newGetMoney += (back / 100) * newPayMoney;
 	// 利率计算
 	let result = ((newGetMoney / days) * 365) / newPayMoney;
 	result = result * 100;
