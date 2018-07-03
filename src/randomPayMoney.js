@@ -1,11 +1,13 @@
 /**
  * 刷卡计划
  * @param {Number} totolMoney 总共需要刷多少钱
+ * @param {Number} start 从几号开始算，默认1号
+ * @param {Number} end 到几号结束
  * @param {Number} min 每次最少刷多少，默认为0
  * @param {Number} max 每次最多刷多少
  */
 
-let getPayMoney = (totolMoney, min = 0, max) => {
+let getPayMoney = (totolMoney, min = 0, max, start = 1, end) => {
 	let results = [];
 	totolMoney = totolMoney + parseInt((Math.random() * 10), 10);
 	let sum = 0;
@@ -45,9 +47,17 @@ let getPayMoney = (totolMoney, min = 0, max) => {
 
     let randomDay = () => {
         let payDays = [];
-        let days = getMonthDays();
+        let days;
+        if (end) {
+            days = getMonthDays();            
+        }
+        else {
+            days = end;
+        }
+        days = days - start + 1;
         for (let i = 0; i < results.length; i++) {
             let day = parseInt((Math.random() * days), 10);
+            day = day + start - 1;
             payDays.push(day);
         }
         payDays.sort(function(a, b){
