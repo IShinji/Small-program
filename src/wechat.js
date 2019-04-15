@@ -12,8 +12,8 @@ let watchWeixin = (watchText, replyText) => {
             let lastMessage = NodeList[NodeListLength - 1];
             let lastMessageText = lastMessage.querySelector('.content .js_message_plain').innerText;
             if (lastMessageText === watchText) {
-                document.querySelector('#editArea').innerText = replyText;
-                document.querySelector('.btn_send').click();
+                angular.element('pre:last').scope().editAreaCtn = replyText;
+                angular.element('pre:last').scope().sendTextMessage();
                 clearInterval(watcher);
             }
         }
@@ -27,4 +27,4 @@ let watchWeixin = (watchText, replyText) => {
         console.log(new Date().toLocaleString() + '\n' + '已运行' + hour + '小时' + minute + '分钟' + second + '秒');
     }, 500);
 };
-watchWeixin('招行练习场 2个权益 2个名额 会的打6报名', '6');
+watchWeixin('招行练习场“扫码”，2个权益、3个名额，会发码的打8报名！按我发的截图里排在前3的直接私聊我发二维码截图+持卡人姓名！！！', '8');
