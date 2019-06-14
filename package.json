@@ -3,10 +3,12 @@
     "commit": "git-cz"
   },
   "config": {
-    "commitizen":{"path":"node_modules/cz-conventional-changelog"}
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   },
   "devDependencies": {
-    "commitizen": "^2.9.6",
+    "commitizen": "3.1.1",
     "cz-conventional-changelog": "^2.1.0"
   }
 }
