@@ -1,6 +1,6 @@
 let music = new Audio;
 music.loop = true;
-music.src = 'http://www.ytmp3.cn/down/73212.mp3';
+music.src = 'https://mip-doc.bj.bcebos.com/guitar.mp3';
 let timer = setInterval(() => {
     fetch("//m.mi.com/v1/miproduct/view", {
         "credentials":"omit",
