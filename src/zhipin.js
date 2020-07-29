@@ -18,3 +18,11 @@ let timer = setInterval(() => {
     }, 100);
   }, 500);
 }, 1000);
+
+
+
+document.querySelectorAll('.geek-info-card').forEach((item, index) => {
+  if (item.querySelectorAll('span')[4].innerText === '21年应届生') {
+    item.querySelectorAll('button')[0].click();
+  }
+})
